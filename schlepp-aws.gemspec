@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Schlepp::AWS::VERSION
   spec.authors       = ["Ed Carrel"]
   spec.email         = ["edward@carrel.org"]
-  spec.summary       = %q{AWS-specific sinks for Schlepp}
+  spec.summary       = %q{AWS-specific transports for Schlepp}
   spec.description   = %q{}
   spec.homepage      = ""
   spec.license       = "MIT"

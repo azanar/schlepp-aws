@@ -22,23 +22,6 @@ module Schlepp
           def url
             "s3://#{S3.bucket.name}/#{path}"
           end
-
-          class Writer
-            # @param table_object TableObject::Base
-            def initialize(table_object)
-              @table_object = table_object
-
-              @s3_obj = S3.bucket.objects[table_object.name]
-            end
-
-            def write(data)
-              @s3_obj.write(data)
-            end
-
-            def delete
-              @s3_obj.delete
-            end
-          end
         end
       end
     end

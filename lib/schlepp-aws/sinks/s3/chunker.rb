@@ -9,10 +9,17 @@ module Schlepp
         class Chunker
           def initialize(table_object, opts = {})
             @table_object = table_object
+            @wrapped = []
           end
+
+          attr_reader :wrapped
 
           def sequence
             chunker.sequence
+          end
+
+          def parts
+            chunker.parts
           end
 
           def next
@@ -20,11 +27,13 @@ module Schlepp
 
             s3_table_obj = Schlepp::AWS::Sink::S3::TableObject.new(part)
 
+            @wrapped << s3_table_obj
+
             writer = Schlepp::AWS::Sink::S3::TableObject::Writer.new(s3_table_obj)
 
             Schlepp::Sink::Loader.new(writer)
           end
-
+          
           private
 
           def chunker
