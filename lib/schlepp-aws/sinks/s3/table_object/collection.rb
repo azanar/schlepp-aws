@@ -1,3 +1,4 @@
+require 'schlepp-aws/sinks/s3/table_object'
 
 module Schlepp
   module AWS

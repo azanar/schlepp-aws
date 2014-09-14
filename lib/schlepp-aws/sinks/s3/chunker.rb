@@ -1,6 +1,7 @@
 require 'schlepp/sink/loader'
 
 require 'schlepp-aws/sinks/s3/table_object'
+require 'schlepp-aws/sinks/s3/table_object/writer'
 
 module Schlepp
   module AWS
