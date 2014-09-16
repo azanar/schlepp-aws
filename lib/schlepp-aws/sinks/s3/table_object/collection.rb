@@ -1,3 +1,5 @@
+require 'hydrogen/table_object/collection'
+
 require 'schlepp-aws/sinks/s3/table_object'
 
 module Schlepp
