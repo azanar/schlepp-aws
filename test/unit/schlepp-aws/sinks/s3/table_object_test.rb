@@ -1,6 +1,7 @@
 require File.expand_path('../../../../test_helper', __FILE__)
 
 require 'schlepp-aws/sinks/s3/table_object'
+require 'schlepp-aws/sinks/s3/table_object/writer'
 
 class Schlepp::AWS::Sink::S3::TableObjectTest < Test::Unit::TestCase
   include TestHelper 
