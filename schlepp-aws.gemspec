@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ed Carrel"]
   spec.email         = ["edward@carrel.org"]
   spec.summary       = %q{AWS-specific transports for Schlepp}
-  spec.description   = %q{}
-  spec.homepage      = ""
+  spec.description   = %q{AWS-specific transports for Schlepp}
+  spec.homepage      = "https://github.com/azanar/schlepp-aws"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
