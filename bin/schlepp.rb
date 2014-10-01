@@ -4,7 +4,7 @@ $LOAD_PATH.push(File.dirname(__FILE__) + '/../lib')
 require 'hydrogen'
 require 'schlepp'
 require 'schlepp/sinks/fs'
-require 'schlepp-aws/sinks/aws/s3'
+require 'schlepp-aws/sinks/s3'
 require 'aws'
 
 config = {
@@ -21,11 +21,9 @@ AWS.config(
 
 model = Hydrogen::Model.new(config)
 
-to = Hydrogen::TableObject.new(model)
-
 source = Schlepp::Source::CSV.new(File.new('data.csv','r'))
 
-l = Schlepp::AWS::Sink::S3::Sequencer.new(to, :chunk_size => 40000)
+l = Schlepp::AWS::Sink::S3::Sequencer.new(model, :chunk_size => 40000)
 
 res = Schlepp.schlepp(source, l)
 

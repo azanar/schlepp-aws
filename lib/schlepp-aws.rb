@@ -4,7 +4,6 @@ require 'schlepp'
 
 require 'schlepp-aws/table_object'
 
-
 module Schlepp
   module AWS
   end
