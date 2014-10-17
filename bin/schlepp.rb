@@ -3,8 +3,7 @@ $LOAD_PATH.push(File.dirname(__FILE__) + '/../lib')
 
 require 'hydrogen'
 require 'schlepp'
-require 'schlepp/sinks/fs'
-require 'schlepp-aws/sinks/s3'
+require 'schlepp-sink-s3'
 require 'aws'
 
 config = {
@@ -14,7 +13,7 @@ config = {
 }
 
 AWS.config(
-  access_key_id: 'ACCESS_KEY_ID',
+  access_key_id: '',
   secret_access_key: 'SECRET_ACCESS_KEY',
   stub_requests:     Schlepp.env.test?,
 )
@@ -23,8 +22,8 @@ model = Hydrogen::Model.new(config)
 
 source = Schlepp::Source::CSV.new(File.new('data.csv','r'))
 
-l = Schlepp::AWS::Sink::S3::Sequencer.new(model, :chunk_size => 40000)
+sink = Schlepp::Sink::S3.new(model)
 
-res = Schlepp.schlepp(source, l)
+res = Schlepp.schlepp(source, sink)
 
 puts res.inspect

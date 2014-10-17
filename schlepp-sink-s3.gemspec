@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'schlepp-aws/version'
+require 'schlepp-sink-s3/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "schlepp-aws"
-  spec.version       = Schlepp::AWS::VERSION
+  spec.name          = "schlepp-sink-s3"
+  spec.version       = Schlepp::Sink::S3::VERSION
   spec.authors       = ["Ed Carrel"]
   spec.email         = ["edward@carrel.org"]
-  spec.summary       = %q{AWS-specific transports for Schlepp}
-  spec.description   = %q{AWS-specific transports for Schlepp}
-  spec.homepage      = "https://github.com/azanar/schlepp-aws"
+  spec.summary       = %q{AWS S3-specific transports for Schlepp}
+  spec.description   = %q{AWS S3-specific transports for Schlepp}
+  spec.homepage      = "https://github.com/azanar/schlepp-sink-s3"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

@@ -25,7 +25,7 @@ TODO: Write usage instructions here
 API Documentation
 -------------
 
-See [RubyDoc](http://rubydoc.info/github/azanar/schlepp-aws/index)
+See [RubyDoc](http://rubydoc.info/github/azanar/schlepp-sink-s3/index)
 
 Contributors
 ------------
